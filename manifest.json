@@ -1,0 +1,135 @@
+{
+  "name": "cortex-plugin-reflection",
+  "version": "1.0.0",
+  "description": "Post-turn reflection plugins: self-consistency, debate, verification",
+  "kind": "esm",
+  "entryPoint": "mod.ts",
+  "runtime": "deno",
+  "author": "CortexPrism",
+  "license": "MIT",
+  "repository": "https://github.com/CortexPrism/cortex-plugin-reflection",
+  "homepage": "https://cortexprism.io/marketplace/plugins/reflection",
+  "capabilities": [
+    "tools",
+    "middleware:post"
+  ],
+  "tools": [
+    {
+      "name": "reflect_self_consistency",
+      "description": "Sample multiple reasoning paths and majority vote",
+      "params": [
+        {
+          "name": "problem",
+          "type": "string",
+          "description": "The problem to reason about",
+          "required": true
+        },
+        {
+          "name": "num_samples",
+          "type": "number",
+          "description": "Number of reasoning paths to sample",
+          "required": false
+        },
+        {
+          "name": "strategy",
+          "type": "string",
+          "description": "Optional reasoning strategy hint",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "reflect_debate",
+      "description": "Two sub-agents argue opposing positions, judge picks best",
+      "params": [
+        {
+          "name": "topic",
+          "type": "string",
+          "description": "The topic or question to debate",
+          "required": true
+        },
+        {
+          "name": "rounds",
+          "type": "number",
+          "description": "Number of debate rounds",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "reflect_verify",
+      "description": "Agent writes tests for its own output before declaring done",
+      "params": [
+        {
+          "name": "output",
+          "type": "string",
+          "description": "The agent's output to verify",
+          "required": true
+        },
+        {
+          "name": "criteria",
+          "type": "string",
+          "description": "Verification criteria",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "reflect_improve",
+      "description": "Suggest improvements based on reflection results",
+      "params": [
+        {
+          "name": "original_output",
+          "type": "string",
+          "description": "The original agent output",
+          "required": true
+        },
+        {
+          "name": "reflection_results",
+          "type": "string",
+          "description": "JSON of previous reflection results",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "peerDependencies": {
+    "cortex": ">=1.0.0"
+  },
+  "ui": {
+    "settings": [
+      {
+        "section": "General",
+        "fields": [
+          {
+            "key": "defaultSamples",
+            "label": "Default Samples",
+            "type": "number",
+            "defaultValue": 3,
+            "description": "Default number of reasoning paths for self-consistency"
+          },
+          {
+            "key": "debateRounds",
+            "label": "Debate Rounds",
+            "type": "number",
+            "defaultValue": 3,
+            "description": "Default number of debate rounds"
+          },
+          {
+            "key": "autoVerify",
+            "label": "Auto Verify",
+            "type": "boolean",
+            "defaultValue": true,
+            "description": "Automatically verify outputs via post-middleware"
+          }
+        ]
+      }
+    ]
+  },
+  "aiDisclosure": {
+    "tools": [
+      "Claude Code (Anthropic)"
+    ],
+    "humanReview": true
+  }
+}
