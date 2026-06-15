@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-reflection",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Post-turn reflection plugins: self-consistency, debate, verification",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -10,8 +10,7 @@
   "repository": "https://github.com/CortexPrism/cortex-plugin-reflection",
   "homepage": "https://cortexprism.io/marketplace/plugins/reflection",
   "capabilities": [
-    "tools",
-    "middleware:post"
+    "tools"
   ],
   "tools": [
     {

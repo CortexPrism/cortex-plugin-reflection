@@ -388,16 +388,6 @@ const improveTool: Tool = {
 // Middleware: post-execution
 // ---------------------------------------------------------------------------
 
-export const postMiddleware = async (
-  toolName: string,
-  result: ToolCallResult,
-  _ctx: PluginContext,
-): Promise<ToolCallResult> => {
-  if (!config.autoVerify) return result;
-  if (!result.success) return result;
-
-  return result;
-};
 
 // ---------------------------------------------------------------------------
 // Lifecycle
@@ -432,4 +422,3 @@ export const tools: Tool[] = [
   improveTool,
 ];
 
-void postMiddleware;
