@@ -24,6 +24,7 @@ cortex chat --plugin cortex-plugin-reflection
 Sample multiple reasoning paths and majority vote.
 
 **Parameters:**
+
 - `problem` (string, required) — The problem to reason about
 - `num_samples` (number, optional) — Number of reasoning paths (default: 3)
 - `strategy` (string, optional) — Reasoning strategy hint
@@ -33,6 +34,7 @@ Sample multiple reasoning paths and majority vote.
 Two sub-agents argue opposing positions, judge picks best.
 
 **Parameters:**
+
 - `topic` (string, required) — The topic or question to debate
 - `rounds` (number, optional) — Number of debate rounds (default: 3)
 
@@ -41,6 +43,7 @@ Two sub-agents argue opposing positions, judge picks best.
 Agent writes tests for its own output before declaring done.
 
 **Parameters:**
+
 - `output` (string, required) — The agent's output to verify
 - `criteria` (string, required) — Verification criteria
 
@@ -49,6 +52,7 @@ Agent writes tests for its own output before declaring done.
 Suggest improvements based on reflection results.
 
 **Parameters:**
+
 - `original_output` (string, required) — The original agent output
 - `reflection_results` (string, required) — JSON of previous reflection results
 
