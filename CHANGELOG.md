@@ -1,6 +1,24 @@
-# Changelog — Reflection Enhancer Pack
+# Changelog
 
+## [Unreleased]
 
+### Added
+- Unit test suite for all tools
+
+### Changed
+- Renamed manifest file from `cortex.json` to `manifest.json` for consistency with Cortex standard
+- Standardized UI section structure to `ui.settings` format
+- Normalized parameter naming: `defaultValue` → `default`, `options` → `enum`
+- Added `homepage` field with repository URL
+- Added `dependencies` field to manifest
+
+### Removed
+- Empty middleware stub comments (placeholders with no implementation)
+
+## [1.0.2] — 2026-06-15
+
+### Added
+- Initial release
 ## [1.0.2] — 2026-06-17
 
 ### Fixed
