@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-reflection",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Post-turn reflection plugins: self-consistency, debate, verification",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -94,7 +94,7 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "cortex": ">=1.0.0"
+    "cortex": ">=0.51.0"
   },
   "ui": {
     "settings": [
@@ -106,21 +106,21 @@
             "label": "Default Samples",
             "type": "number",
             "description": "Default number of reasoning paths for self-consistency",
-            "default": 3
+            "defaultValue": 3
           },
           {
             "key": "debateRounds",
             "label": "Debate Rounds",
             "type": "number",
             "description": "Default number of debate rounds",
-            "default": 3
+            "defaultValue": 3
           },
           {
             "key": "autoVerify",
             "label": "Auto Verify",
             "type": "boolean",
             "description": "Automatically verify outputs via post-middleware",
-            "default": true
+            "defaultValue": true
           }
         ]
       }
